@@ -7,14 +7,16 @@
         </template>
 
         <div class="py-12 px-5 md:px-10 max-w-7xl mx-auto">
-            <inertia-link :href="route('articles.show', 1)">
+            <inertia-link :href="route('articles.show', newer_article)">
                 <div class="grid grid-cols-2 gap-10 px-5 md:px-20 bg-white p-10 rounded-lg shadow-lg">
                     <div class="col-span-2 lg:col-span-1">
                         <img src="images/bitcoin_01.jpg" class="w-full rounded-md max-h-96">
                     </div>
                     <div class="col-span-2 lg:col-span-1 flex flex-col justify-center">
-                        <h2 class="text-gray-800 text-2xl font-semibold">The future looks bright for bitcoin</h2>
-                        <p class="mt-5 text-gray-500">It was an honor to take part in this year’s Bitcoin 2022 Conference in Miami. The inspiring conversations that took place at the convention center are what fuels the work we do...</p>
+                        <h2 class="text-gray-800 text-2xl font-semibold">{{ newer_article.title }}</h2>
+                        <p class="mt-5 text-gray-500">
+                            {{ newer_article.short_description }}
+                        </p>
                     </div>
                 </div>
             </inertia-link>
@@ -43,5 +45,13 @@
         components: {
             AppLayout,
         },
+        data(){
+            return {
+                newer_article: {}
+            }
+        },
+        mounted(){
+            this.newer_article = this.articles.shift()
+        }
     }
 </script>
