@@ -40,6 +40,7 @@ class ArticleSeeder extends Seeder
             <p>On October 14, 2021 it was reported that Tesla was up over $1 billion on its initial investment into bitcoin. More recently, April 8, 2022 Tesla announced a partnership with BlockStream and Block, noting that Tesla energy equipment would be leveraged for a $12 million bitcoin mining facility.</p>
 
             <p>In full circle, Tesla entered the bitcoin ecosystem with a massive $1.5 billion BTC buy, took action for the environment as it believed was necessary, held its BTC reserves, and returned to the ecosystem as a clean bitcoin mining participant.&nbsp;</p>',
+            'image' => 'images/tesla.jpg',
         ]);
 
         DB::table('articles')->insert([
@@ -60,6 +61,7 @@ class ArticleSeeder extends Seeder
 <p>Year-to-date (YTD) the mining fleet of Marathon has produced 1,558 BTC valued at $60.7 million at time of writing, representing a 340% year-over-year (YoY) increase. By early 2023, Marathon expects to have a total fleet of 199,000 miners reaching a hashpower of 23.3 EH/s. The entirety of this fleet is expected to be 100% carbon neutral.</p>
 
 <p>Marathon&rsquo;s cash reserves totalled $40.4 million at the end of April and noted that total liquidity, which includes cash and credit facilities, reached a total $70.4 million.&nbsp;</p>',
+            'image' => 'images/bitcoin_03.jpg',
         ]);
 
         DB::table('articles')->insert([
@@ -80,6 +82,7 @@ class ArticleSeeder extends Seeder
 <p>Early bitcoin miners earned 50 BTC for each block they mined when the network was first spun up in 2009. The low-difficulty high-reward epoch began to fade in 2012 as the first halving ensued, cutting the reward to 25 BTC.</p>
 
 <p>Four years later, in 2016, each Bitcoin block started giving out only 12.5 BTC for its miner. Two years ago, the block reward was further cut in half to 6.25 bitcoin &ndash; the number that still prevails today. In 2024, the protocol is set to repeat the halving once more, dropping the block reward to 3.125 BTC.</p>',
+            'image' => 'images/bitcoin_02.jpg',
         ]);
 
         DB::table('articles')->insert([
@@ -111,6 +114,7 @@ class ArticleSeeder extends Seeder
 <p>There is a lot happening in the emerging markets, and countries like&nbsp;<a href="https://bitcoinmagazine.com/tags/nigeria">Nigeria</a>&nbsp;and&nbsp;<a href="https://bitcoinmagazine.com/tags/el-salvador">El Salvador</a>&nbsp;have already begun to show the world Bitcoin&rsquo;s true use cases. A few examples include the panel &ldquo;<a href="https://youtu.be/RmAiZaIzwFg" onclick="return phoenixTrackClickEvent(this, event);" target="_blank">Building Bitcoin Communities</a>,&rdquo; where several changemakers took the stage to share how they are on the ground, in places like Bitcoin Beach and beyond, putting Bitcoin to work for the people. Off-stage at the Renaissance Art Gallery, a Bitcoin NFT project,&nbsp;<a href="https://builtwithnft.org/" onclick="return phoenixTrackClickEvent(this, event);" target="_blank">Built With NFT</a>, showcased how Bitcoin can be used for social good. It&rsquo;s these initiatives that help show the world Bitcoin&rsquo;s true power.</p>
 
 <p>Bitcoin has real value that can drive financial freedom for 100% of people. While the Bitcoin Conference is evidence that the Bitcoin community is growing, there is still a lot of work to be done. We need to move faster to get Bitcoin to the streets &mdash; specifically to the communities that need it most. Education about Bitcoin is what will get us there. I hope that next year there can be even more content around how Bitcoin is making an impact around the world. We are just beginning to scratch the surface &mdash; Bitcoin will change the world, and I&rsquo;m honored to be witness to this movement.</p>',
+            'image' => 'images/bitcoin_01.jpg',
         ]);
     }
 }
