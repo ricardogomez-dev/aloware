@@ -23,11 +23,11 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $article)
     {
-        dd($id);
+        return Inertia::render('Articles/Show', compact('article'));
     }
 }
