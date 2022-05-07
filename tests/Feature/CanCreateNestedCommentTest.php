@@ -19,12 +19,7 @@ class CanCreateNestedCommentTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user);
 
-        $article = Article::create([
-            'title' => 'Test title',
-            'short_description' => 'Short description',
-            'full_description' => 'Full description',
-            'image' => 'image'
-        ]);
+        $article = Article::factory()->create();
 
         $comment = Comment::create([
             'user_id' => $user->id,

@@ -18,12 +18,7 @@ class CreateCommentTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user);
 
-        $article = Article::create([
-            'title' => 'Test title',
-            'short_description' => 'Short description',
-            'full_description' => 'Full description',
-            'image' => 'image'
-        ]);
+        $article = Article::factory()->create();
 
         $this->post(route('comments.store'), [
             'comment' => 'Test comment',
