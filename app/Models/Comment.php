@@ -15,4 +15,9 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function nested_comments()
+    {
+        return $this->hasMany(NestedComment::class);
+    }
 }
