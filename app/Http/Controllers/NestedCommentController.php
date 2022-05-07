@@ -18,6 +18,6 @@ class NestedCommentController extends Controller
     {
         $comment = NestedComment::create($request->validated());
 
-        return $comment;
+        return $comment->load('user');
     }
 }

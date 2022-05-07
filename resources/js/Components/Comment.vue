@@ -15,7 +15,7 @@
 		<form v-if="replyComment" @submit.prevent="createComment">
 			<input id="comment_input" v-model="form.comment" type="text" class="w-full pl-5 pr-10 py-3 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm transition-colors" placeholder="Write a new comment...">
 		</form>
-		<div v-for="nested_comment in comment.nested_comments">
+		<div v-for="nested_comment in nested_comments">
 			<NestedComment :comment="nested_comment" />
 		</div>
 	</div>
@@ -35,13 +35,21 @@
 					comment_id: this.comment.id,
 					user_id: this.$page.props.user.id
 				},
-				replyComment: false
+				replyComment: false,
+				nested_comments: this.comment.nested_comments
+					? this.comment.nested_comments
+					: []
 			}
 		},
 		methods: {
 			createComment(){
-				axios.post(route('nested_comments.store'), this.form)
-					.then(res => console.log(res.data))
+				if(this.form.comment){
+					axios.post(route('nested_comments.store'), this.form)
+						.then(res => {
+							this.form.comment = ''
+							this.nested_comments.push(res.data) 
+						})
+				}
 			}
 		}
 	}

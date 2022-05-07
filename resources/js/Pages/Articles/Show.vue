@@ -50,8 +50,13 @@
 		},
 		methods: {
 			createComment(){
-				axios.post(route('comments.store'), this.form)
-					.then(res => console.log(res.data))
+				if(this.form.comment){
+					axios.post(route('comments.store'), this.form)
+						.then(res => {
+							this.form.comment = ''
+							this.comments.push(res.data)
+						})
+				}
 			}
 		}
 	}

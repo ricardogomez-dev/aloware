@@ -18,6 +18,6 @@ class CommentController extends Controller
     {
         $comment = Comment::create($request->validated());
 
-        return $comment;
+        return $comment->load('user');
     }
 }
