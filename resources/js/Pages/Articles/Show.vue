@@ -44,7 +44,7 @@
 					user_id: this.$page.props.user.id
 				},
 				comments: this.article.comments
-					? this.article.comments
+					? this.article.comments.reverse()
 					: []
 			}
 		},
