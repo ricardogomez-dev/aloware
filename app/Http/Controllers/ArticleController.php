@@ -33,7 +33,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        $article->load('comments.user');
+        $article->load(['comments.user', 'comments.nested_comments.user']);
 
         return Inertia::render('Articles/Show', compact('article'));
     }

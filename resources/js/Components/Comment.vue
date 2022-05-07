@@ -15,6 +15,9 @@
 		<form v-if="replyComment" @submit.prevent="createComment">
 			<input id="comment_input" v-model="form.comment" type="text" class="w-full pl-5 pr-10 py-3 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm transition-colors" placeholder="Write a new comment...">
 		</form>
+		<div v-for="nested_comment in comment.nested_comments">
+			<NestedComment :comment="nested_comment" />
+		</div>
 	</div>
 </template>
 
