@@ -16,6 +16,11 @@
 		<div class="pb-20 px-5 md:px-20 max-w-7xl mx-auto">
 			<h2 class="text-gray-700 text-2xl mb-10">Comments</h2>
 			<Comment />
+			<div class="mt-8">
+				<form @submit.prevent="createComment">
+					<input v-model="form.comment" type="text" class="w-full pl-5 pr-10 py-3 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm transition-colors" placeholder="Write a new comment...">
+				</form>
+			</div>
 		</div>
     </app-layout>
 </template>
@@ -29,6 +34,23 @@
 		components: {
 			AppLayout,
 			Comment,
+		},
+		data(){
+			return {
+				form: {
+					article_id: this.article.id,
+					user_id: this.$page.props.user.id
+				},
+				comments: this.article.comments
+					? this.article.comments
+					: []
+			}
+		},
+		methods: {
+			createComment(){
+				axios.post(route('comments.store'), this.form)
+					.then(res => console.log(res.data))
+			}
 		}
 	}
 </script>

@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [ArticleController::class, 'index']);
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
