@@ -15,7 +15,9 @@
 
 		<div class="pb-20 px-5 md:px-20 max-w-7xl mx-auto">
 			<h2 class="text-gray-700 text-2xl mb-10">Comments</h2>
-			<Comment />
+			<div v-for="comment in comments" :key="comment.id">
+				<Comment :comment="comment" />
+			</div>
 			<div class="mt-8">
 				<form @submit.prevent="createComment">
 					<input v-model="form.comment" type="text" class="w-full pl-5 pr-10 py-3 border border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm transition-colors" placeholder="Write a new comment...">
