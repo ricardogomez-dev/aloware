@@ -54,7 +54,7 @@
 					axios.post(route('comments.store'), this.form)
 						.then(res => {
 							this.form.comment = ''
-							this.comments.push(res.data)
+							this.comments.unshift(res.data)
 						})
 				}
 			}

@@ -49,7 +49,7 @@
 						.then(res => {
 							this.form.comment = ''
 							this.replyComment = false
-							this.nested_comments.push(res.data) 
+							this.nested_comments.unshift(res.data) 
 						})
 				}
 			}
